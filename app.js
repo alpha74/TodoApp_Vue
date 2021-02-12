@@ -3,6 +3,12 @@ const inputGoalEl = document.getElementById('goal')
 const inputDescEl = document.getElementById('goalDesc')
 const listEl = document.querySelector('ul')
 
+// Function to remove an Item
+function removeItem(elementId)
+{
+    document.getElementById(elementId).remove()
+}
+
 // Function to add an Item
 function addGoal()
 {
@@ -17,6 +23,13 @@ function addGoal()
         var attribId = "goalItem"
         attribId = attribId.concat( listEl.childElementCount+1 ) 
 
+        const buttonDeleteItem = document.createElement('input')
+        buttonDeleteItem.setAttribute('onclick', 'removeItem("' + attribId + '")')
+        buttonDeleteItem.setAttribute('type', 'button')
+        buttonDeleteItem.setAttribute('style', 'margin-top: 8px')
+        
+        buttonDeleteItem.value = "Delete"
+
         const lineBreak = document.createElement('br')
         const listItem = document.createElement('li');
         listItem.setAttribute('id', attribId)
@@ -24,7 +37,8 @@ function addGoal()
         listItem.appendChild(enteredGoalStrong)
         listItem.append(lineBreak)
         listItem.append(enteredGoalDesc)
-
+        listItem.append(buttonDeleteItem)
+        
         listEl.appendChild(listItem)
     }
     else
