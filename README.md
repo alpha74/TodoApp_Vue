@@ -2,6 +2,7 @@
 
 #### A simple looking Todo App made using VueJs.
 
+Visit [here](https://alpha74.github.io/TodoApp_Vue/)
 
 ### Run
 - Fork or download the repo
