@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Goals App</title>
+    <title>Goals App Vue</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,17 +11,23 @@
       <div>
         <label for="goal">Goal Maker</label>
 
-        <input type="text" id="goal" placeholder="Title" maxlength=60/>
-        <input type="text" id="goalDesc" placeholder="Description" maxlength=200/>
-        <button type="submit">Add Goal</button>
+        <input type="text" id="goal" placeholder="Title" maxlength=60 v-model="enteredTitle" />
+        <input type="text" id="goalDesc" placeholder="Description" maxlength=200 v-model="enteredDesc" />
+        <button type="submit" v-on:click="addGoal">Add Goal</button>
       </div>
       
       <ul>
-
+        <li v-for="goal in goals">
+          <strong> {{ goal.title }} </strong>
+          </br>
+          {{ goal.desc }}
+          </br>
+          <button v-on:click="removeGoal( goal )"> Remove </button>
+        </li>
       </ul>
     
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
   </body>
 </html>
