@@ -1,6 +1,6 @@
-# GoalsApp Vanilla
+# Todo App Vanilla
 
-#### A simple notepad for adding your goals made using VanillaJS.
+#### A simple looking Todo App made using VueJs.
 
 
 ### Run
