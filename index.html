@@ -9,7 +9,7 @@
   <body>
     <div id="app">
       <div>
-        <label for="goal">Goal Maker</label>
+        <label for="goal">TodoApp Vue</label>
 
         <input type="text" id="goal" placeholder="Title" maxlength=60 v-model="enteredTitle" />
         <input type="text" id="goalDesc" placeholder="Description" maxlength=200 v-model="enteredDesc" />
@@ -22,7 +22,7 @@
           </br>
           {{ goal.desc }}
           </br>
-          <button v-on:click="removeGoal( goal )"> Remove </button>
+          <button v-on:click="removeGoal( goal)"> Remove </button>
         </li>
       </ul>
     
